@@ -11,8 +11,8 @@
         <h5>{{ post.title }}</h5><br>
         <hr class="w3-clear">
         <p>{{ post.description }}</p>
-        <button href="/news/id" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Read more</button>
-        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button>
+          <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i><a href="{{ post.id }}">Read more</a></button>
+        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i> Comment</button>
       </div>
 {% endfor %}
     <!-- End Middle Column -->
