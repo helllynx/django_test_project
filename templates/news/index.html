@@ -6,12 +6,12 @@
     <div class="w3-col m7">
     {% for post in posts %}
       <div class="w3-container w3-card-2 w3-white w3-round w3-margin"><br>
-        <img src="{{ post.image.url }}" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:110px">
-        <span class="w3-right w3-opacity">{{  post.pub_date }}</span>
+        <img src="{{ post.image.url }}" alt="Avatar" class="w3-left w3-quarter w3-margin-right" style="width:110px">
+        <span class="w3-right w3-opacity">{{ post.pub_date }}</span>
         <h5>{{ post.title }}</h5><br>
         <hr class="w3-clear">
         <p>{{ post.description }}</p>
-        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button>
+        <button href="/news/id" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Read more</button>
         <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button>
       </div>
 {% endfor %}
