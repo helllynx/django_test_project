@@ -1,4 +1,4 @@
-{% extends "home/base.html" %}
+{% extends "base.html" %}
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
@@ -10,8 +10,8 @@
         <h5>{{ post.title }}</h5><br>
         <hr class="w3-clear">
         <p>{{ post.text }}</p>
-        <button type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</button>
-        <button type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</button>
+        <a type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>  Like</a>
+        <a type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</a>
       </div>
     <!-- End Middle Column -->
     </div>

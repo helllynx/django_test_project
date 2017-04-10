@@ -1,4 +1,10 @@
 from django.shortcuts import render
 
-def index(request):
-    return render(request, 'adv/../templates/adv/vacanse.html')
+def shop(request):
+    return render(request, 'adv/shop.html')
+
+
+def vacanse(request):
+    return render(request, 'adv/vacanse.html')
+
+
