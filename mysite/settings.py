@@ -37,8 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'adv.apps.AdvConfig',
-    'home.apps.HomeConfig',
     'news.apps.NewsConfig',
 ]
 
@@ -79,7 +77,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mysite',
+        'NAME': 'djangodb',
         'USER': 'djangodbuser',
         'PASSWORD': '12345',
         'HOST': 'localhost',
