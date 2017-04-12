@@ -12,4 +12,4 @@ def detail(request, id):
 
 def index(request):
     news = News.objects.all()
-    return render(request, 'news/index.html', {'posts':news})
+    return render(request, 'news/index.html', {'posts': news})
