@@ -16,7 +16,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 <div class="w3-top">
  <div class="w3-bar w3-theme-d2 w3-left-align w3-large">
   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-opennav w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
-  <a href="/" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>Yenq</a>
+  <a href="/" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>MIET Board</a>
   <a href="/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News"><i class="fa fa-feed"></i></a>
   <a href="/vacanse" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Vacanse"><i class="fa fa-user"></i></a>
   <a href="/shop" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Shop"><i class="fa fa-credit-card"></i></a>
@@ -28,7 +28,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
       <a href="#" class="w3-bar-item w3-button">Jane likes your post</a>
     </div>
   </div>
-  <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="My Account"><img src="../static/home/img/avatar.jpg" class="w3-circle" style="height:25px;width:25px" alt="Avatar"></a>
+  <a href="/reg/login" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="{{ request.user.username }}"><img src="../static/home/img/avatar.jpg" class="w3-circle" style="height:25px;width:25px" alt="Avatar"></a>
  </div>
 </div>
 
@@ -47,16 +47,18 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
     <!-- Left Column -->
     <div class="w3-col m3">
       <!-- Profile -->
-      <div class="w3-card-2 w3-round w3-white">
-        <div class="w3-container">
-         <h4 class="w3-center">My Profile</h4>
-         <p class="w3-center"><img src="../static/home/img/avatar.jpg" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
-         <hr>
-         <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i> True Hacker</p>
-         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i> Moscow, Greencity</p>
-         <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-text-theme"></i> April 1, 1988</p>
-        </div>
-      </div>
+{#      <div class="w3-card-2 w3-round w3-white">#}
+{#        <div class="w3-container">#}
+{#         <h4 class="w3-center">{% if request.user.is_authenticated %}{{ request.user.username }}#}
+{#{% else %}<a>Guest</a>{% endif %}</h4>#}
+{#         <p class="w3-center"><img src="../static/home/img/avatar.jpg" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>#}
+{#         <hr>#}
+{#         <p><i class="fa fa-pencil fa-fw w3-margin-right w3-text-theme"></i>{% if request.user.is_authenticated %}{{ request.user.first_name }}#}
+{#{% else %}<a>Guest</a>{% endif %}</p>#}
+{#         <p><i class="fa fa-home fa-fw w3-margin-right w3-text-theme"></i>{% if request.user.is_authenticated %}{{ request.user.last_name }}#}
+{#{% else %}<a>Guest</a>{% endif %}</p>#}
+{#        </div>#}
+{#      </div>#}
       <br>
 
       <!-- Accordion -->
@@ -159,7 +161,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 <br>
 
 <!-- Footer -->
-<footer class="w3-container w3-theme-d5">
+<footer class="w3-container w3-theme-d5 footer ">
   <p>Powered by <a href="/" target="_blank">yenqwerty.</a></p>
 </footer>
 

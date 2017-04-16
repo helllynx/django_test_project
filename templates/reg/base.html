@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <title>{% block title %}Log in!{% endblock %}</title>
+
+  <link rel="stylesheet prefetch" href='http://172.18.28.71/static/reg/css/jqui.css'>
+    <link rel="stylesheet" href="http://172.18.28.71/static/reg/css/style.css">
+</head>
+
+
+<body>
+  <div class="login-card">
+      {% block content %}
+      {% endblock %}
+ <div class="login-help">
+    <a href="/reg/signup">Register</a> • <a href="#">Forgot Password</a>
+  </div>
+</div>
+
+
+
+</body>
+</html>

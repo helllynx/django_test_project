@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'news.apps.NewsConfig',
     'shop.apps.ShopConfig',
-    'vacanse.apps.VacanseConfig'
+    'vacanse.apps.VacanseConfig',
+    'reg.apps.LoginConfig'
 ]
 
 MIDDLEWARE = [
@@ -65,6 +66,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.contrib.messages.context_processors',
             ],
         },
     },
@@ -128,3 +130,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 MEDIA_URL = '/media/'
+
+import django.contrib.auth
+django.contrib.auth.LOGIN_URL = '/'
+
+# LOGIN_URL = '/'
+LOGOUT_URL = '/'
+LOGIN_REDIRECT_URL = '/'

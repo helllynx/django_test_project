@@ -8,7 +8,5 @@ urlpatterns = [
     url(r'^vacanse/' , include('vacanse.urls')),
     url(r'^shop/' , include('shop.urls')),
     url(r'^', include('news.urls')),
-    url(r'^login/$', auth_views.login, name='registration'),
-    url(r'^logout/$', auth_views.logout, name='logout')
-
+    url(r'^reg/', include('reg.urls'))
 ]
