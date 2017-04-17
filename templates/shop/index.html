@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}Shop!{% endblock %}
+{% block title %}Shop{% endblock %}
 
 {% block content %}
     <!-- Middle Column -->
@@ -11,6 +11,7 @@
         <h5>{{ post.title }}</h5><br>
         <hr class="w3-clear">
         <p>{{ post.description }}</p>
+          <p>{{ post.cost }} р.</p>
           <a href="{{ post.id }}" type="button" class="w3-button w3-theme-d1 w3-margin-bottom"><i class="fa fa-thumbs-up"></i>Read more</a>
         <a type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i> Comment</a>
       </div>
