@@ -4,6 +4,7 @@ from django.db import models
 class Vacanse(models.Model):
     title = models.CharField(max_length=20,default='')
     description = models.CharField(max_length=100,default='')
+    image = models.ImageField(upload_to='vacance', default='vacanse/noimagefound.jpg')
     company = models.CharField(max_length=30,default='')
     city = models.CharField(max_length=20,default='')
     address = models.CharField(max_length=80,default='')
