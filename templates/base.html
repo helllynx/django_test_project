@@ -3,13 +3,16 @@
 <title>{% block title %}{% endblock %}</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://172.18.28.71/static/home/css/w3.css">
-<link rel="stylesheet" href="http://172.18.28.71/static/home/css/w3-theme-blue-grey.css">
-<link rel='stylesheet' href='http://172.18.28.71/static/home/fonts/OpenSans.woff'>
-<link rel="stylesheet" href="http://172.18.28.71/static/home/css/font-awesome.min.css">
+ {% load static %}
+    <link rel="stylesheet" href="{% static 'css/w3.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/w3-theme-blue-grey.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'fonts/OpenSans.woff' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+
 <style>
 html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 </style>
+
 <body class="w3-theme-l5">
 
 <!-- Navbar -->
@@ -18,8 +21,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
   <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-opennav w3-right w3-padding-large w3-hover-white w3-large w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
   <a href="/" class="w3-bar-item w3-button w3-padding-large w3-theme-d4"><i class="fa fa-home w3-margin-right"></i>MIET Board</a>
   <a href="/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="News"><i class="fa fa-feed"></i></a>
-  <a href="/vacanse" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Vacanse"><i class="fa fa-user"></i></a>
-  <a href="/shop" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Shop"><i class="fa fa-credit-card"></i></a>
+  <a href="/vacancy/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Vacanse"><i class="fa fa-user"></i></a>
+  <a href="/shop/" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" title="Shop"><i class="fa fa-credit-card"></i></a>
   <div class="w3-dropdown-hover w3-hide-small">
     <button class="w3-button w3-padding-large" title="Notifications"><i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-green">3</span></button>
     <div class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:300px">
@@ -28,16 +31,16 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
       <a href="#" class="w3-bar-item w3-button">Jane likes your post</a>
     </div>
   </div>
-  <a href="/reg/login" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="{{ request.user.username }}"><img src="../static/home/img/avatar.jpg" class="w3-circle" style="height:25px;width:25px" alt="Avatar"></a>
+  <a href="/reg/login" class="w3-bar-item w3-button w3-hide-small w3-right w3-padding-large w3-hover-white" title="{{ request.user.username }}"><img src="../static/img/avatar.jpg" class="w3-circle" style="height:25px;width:25px" alt="Avatar"></a>
  </div>
 </div>
 
 <!-- Navbar on small screens -->
 <div id="navDemo" class="w3-bar-block w3-theme-d2 w3-hide w3-hide-large w3-hide-medium w3-large">
-  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
+  <a href="/news/" class="w3-bar-item w3-button w3-padding-large">News</a>
+  <a href="/shop/" class="w3-bar-item w3-button w3-padding-large">Shop</a>
+  <a href="/vacancy/" class="w3-bar-item w3-button w3-padding-large">Vacancy</a>
+  <a href="/reg/login" class="w3-bar-item w3-button w3-padding-large">My Profile</a>
 </div>
 
 <!-- Page Container -->
@@ -126,7 +129,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
         <span onclick="this.parentElement.style.display='none'" class="w3-hover-text-grey w3-closebtn">
           <i class="fa fa-remove"></i>
         </span>
-        <p><strong>Hello!</strong></p>
+        <p><strong>Hello {{ request.user.username }}!</strong></p>
         <p>If you find errors, typos, bugs, write to me <a href="#">yenqwerty@gmail.com</a></p>
       </div>
 
@@ -144,7 +147,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
       <div class="w3-card-2 w3-round w3-white w3-center">
         <div class="w3-container">
           <p>Upcoming Events:</p>
-          <img src="../static/home/img/calendar.png" alt="Forest" style="width:100%;">
+          <img src="../static/img/calendar.png" alt="Forest" style="width:100%;">
           <p><strong>Holiday</strong></p>
           <p>Friday 15:00</p>
           <p><button class="w3-button w3-block w3-theme-l4">Info</button></p>
@@ -161,9 +164,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Open Sans", sans-serif}
 <br>
 
 <!-- Footer -->
-<footer class="w3-container w3-theme-d5 footer ">
-  <p>Powered by <a href="/" target="_blank">yenqwerty.</a></p>
-</footer>
+{#<footer class="w3-container w3-theme-d5 footer ">#}
+{#  <p>Powered by <a href="/" target="_blank">yenqwerty.</a></p>#}
+{#</footer>#}
 
 <script>
 // Accordion

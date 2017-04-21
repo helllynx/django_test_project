@@ -9,7 +9,7 @@
         <span class="w3-right w3-opacity">{{  post.pub_date }}</span>
         <h5>{{ post.title }}</h5><br>
         <hr class="w3-clear">
-        <p>{{ post.text }}</p>
+        <p>{{ post.text|safe }}</p>
           <p>{{ post.city }}</p>
           <p>{{ post.salary }} р.</p>
         <a type="button" class="w3-button w3-theme-d2 w3-margin-bottom"><i class="fa fa-comment"></i>  Comment</a>
